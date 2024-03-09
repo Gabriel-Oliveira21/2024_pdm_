@@ -2,6 +2,11 @@ import React from 'react'
 import  ReactDOM  from 'react-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
+import Pedido from './Pedido'
+import Cartao from './Cartao'
+import Rodape from './Rodape'
+import Feedback from './Feedback'
+
 const App = () => {
     return <div className="container border mt-2">
         <div className="row">
@@ -12,58 +17,73 @@ const App = () => {
         {/* linha dos pedidos */}
         <div className="row">
             <div className="col-sm-12 col-lg-6 col-xl-3">
-                <div className="card">
-                    <div className="card-header text-muted">22/04/2021</div>
-                    <div className="card-body d-flex"></div>
-                    <div className="d-flex align-items-center">
-                        <i className="fa-regular fa-hard-drive fa-2x fa-beat-fade"></i>
-                    </div>
-                    <div className="flex-grow-1 ms-3 border">
-                        <h4 className="text-center">HD</h4>
-                        <p className="text-center">HD 1Tb</p>
-                    </div>
-                </div>
+            <Cartao cabecalho="22/04/24">
+            <Pedido
+            data="22/04/2024"
+            iconeNome="fa-memory"
+            iconeEfeito="fa-bounce"
+            titulo="Memória RAM"
+            descricao="16GB" />
+            <Feedback
+            textoOK="Já chegou"
+            textoNOK="Ainda não chegou"
+            funcaoOK={() => alert('Obrigado pelo feedback!')}
+            funcaoNOK={() => alert('Verificaremos oque houve!')}
+            />
+            </Cartao>
             </div>
             <div className="col-sm-12 col-lg-6 col-xl-3">
-            <div className="card">
-                    <div className="card-header text-muted">22/04/2021</div>
-                    <div className="card-body d-flex"></div>
-                    <div className="d-flex align-items-center">
-                        <i className="fa-solid fa-memory fa-2x fa-beat-fade"></i>
-                    </div>
-                    <div className="flex-grow-1 ms-3 border">
-                        <h4 className="text-center">RAM</h4>
-                        <p className="text-center">Memoria 16GB</p>
-                    </div>
-                </div>
+            <Cartao cabecalho="22/04/24">
+            <Pedido
+                      data="22/04/2024"
+                      iconeNome="fa-hdd"
+                      iconeEfeito="fa-flip"
+                      titulo="HDD"
+                      descricao="1TB" />
+            <Feedback
+            textoOK="Já chegou"
+            textoNOK="Ainda não chegou"
+            funcaoOK={() => alert('Obrigado pelo feedback!')}
+            funcaoNOK={() => alert('Verificaremos oque houve!')}
+            />
+            </Cartao>
             </div>
             <div className="col-sm-12 col-lg-6 col-xl-3">
-            <div className="card">
-                    <div className="card-header text-muted">22/04/2021</div>
-                    <div className="card-body d-flex"></div>
-                    <div className="d-flex align-items-center">
-                        <i className="fa-brands fa-java fa-2x fa-beat-fade"></i>
-                    </div>
-                    <div className="flex-grow-1 ms-3 border">
-                        <h4 className="text-center">Java</h4>
-                        <p className="text-center">Projeto simples</p>
-                    </div>
-                </div>
+            <Cartao cabecalho="22/04/24">
+            <Pedido 
+                      data="22/04/2024"
+                      iconeNome="fa-book"
+                      iconeEfeito="fa-shake"
+                      titulo="livro"
+                      descricao="Math Class"/>
+            <Feedback
+            textoOK="Já chegou"
+            textoNOK="Ainda não chegou"
+            funcaoOK={() => alert('Obrigado pelo feedback!')}
+            funcaoNOK={() => alert('Verificaremos oque houve!')}
+            />
+            </Cartao>
             </div>
             <div className="col-sm-12 col-lg-6 col-xl-3">
-            <div className="card">
-                    <div className="card-header text-muted">22/04/2021</div>
-                    <div className="card-body d-flex"></div>
-                    <div className="d-flex align-items-center">
-                        <i className="fa-solid fa-gamepad fa-2x fa-beat-fade"></i>
-                    </div>
-                    <div className="flex-grow-1 ms-3 border">
-                        <h4 className="text-center">Game</h4>
-                        <p className="text-center">Game App</p>
-                    </div>
-                </div>
+            <Cartao cabecalho="22/04/24">
+            <Pedido 
+                      data="22/04/2024"
+                      iconeNome="fa-laptop"
+                      iconeEfeito="fa-fade"
+                      titulo="Nootebook"
+                      descricao="i7 12th"/>
+            <Feedback
+            textoOK="Já chegou"
+            textoNOK="Ainda não chegou"
+            funcaoOK={() => alert('Obrigado pelo feedback!')}
+            funcaoNOK={() => alert('Verificaremos oque houve!')}
+            />
+            </Cartao>
             </div>    
-         </div>  
+         </div>
+         <div className="row">
+          <Rodape nomeEmpresa ="Dispositivos Moveis" />  
+        </div>  
     </div>
 }
 
