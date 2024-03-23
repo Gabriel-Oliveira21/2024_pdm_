@@ -5,17 +5,25 @@ import ReactDOM from 'react-dom'
 
 class App extends React.Component{
 
-  constructor(props){
-    super(props)
-    this.state = {
+state = {
       latitude: null,
       longitude: null,
       estacao: null,
       data: null,
-      icone: null
+      icone: null,
+      mensagemDeErro: null
+        }
+   
+    componentDidMount(){
+        console.log('componentDidMount')
+        this.obterLocalizacao()
     }
-  }
-
+    componentDidUpdate(){
+        console.log('componentDidUpdate')
+    }
+    componentWillUnmount(){
+        console.log('componentWillUnmount')
+    }
   icones = {
     'Verão': 'sun',
     'Inverno': 'snowflake',
@@ -71,6 +79,7 @@ class App extends React.Component{
 
   
   render(){
+    console.log('render')
     return (
       <div className='container mt-2'>
         <div className="row justify-content-center">
